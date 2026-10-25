@@ -12,18 +12,18 @@
 
 ## 订阅链接
 
-把 `<你的GitHub用户名>` 换成你自己的用户名：
+订阅链接（仓库用户名 `StarHu66`，分支 `main`）：
 
 ```
-https://raw.githubusercontent.com/<你的GitHub用户名>/qx-splash-adblock/main/SplashAdBlock.list
-https://raw.githubusercontent.com/<你的GitHub用户名>/qx-splash-adblock/main/SplashAdBlock-Aggregator.list
-https://raw.githubusercontent.com/<你的GitHub用户名>/qx-splash-adblock/main/SplashAdBlock-Allow.list
+https://raw.githubusercontent.com/StarHu66/qx-splash-adblock/main/SplashAdBlock.list
+https://raw.githubusercontent.com/StarHu66/qx-splash-adblock/main/SplashAdBlock-Aggregator.list
+https://raw.githubusercontent.com/StarHu66/qx-splash-adblock/main/SplashAdBlock-Allow.list
 ```
 
 国内访问 raw 不稳时的备用镜像（jsDelivr，有约数小时缓存）：
 
 ```
-https://cdn.jsdelivr.net/gh/<你的GitHub用户名>/qx-splash-adblock@main/SplashAdBlock.list
+https://cdn.jsdelivr.net/gh/StarHu66/qx-splash-adblock@main/SplashAdBlock.list
 ```
 
 ## 在 QX 配置里引用
@@ -31,14 +31,14 @@ https://cdn.jsdelivr.net/gh/<你的GitHub用户名>/qx-splash-adblock@main/Splas
 粘到配置文件的 `[filter_remote]` 段落，**顺序必须是白名单在最前**：
 
 ```
-https://raw.githubusercontent.com/<你的GitHub用户名>/qx-splash-adblock/main/SplashAdBlock-Allow.list, tag=开屏误杀放行, force-policy=direct, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/<你的GitHub用户名>/qx-splash-adblock/main/SplashAdBlock.list, tag=开屏广告拦截, force-policy=reject, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/StarHu66/qx-splash-adblock/main/SplashAdBlock-Allow.list, tag=开屏误杀放行, force-policy=direct, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/StarHu66/qx-splash-adblock/main/SplashAdBlock.list, tag=开屏广告拦截, force-policy=reject, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
 ```
 
 聚合扩展包按需添加（同上，务必带 `inserted-resource=true`）：
 
 ```
-https://raw.githubusercontent.com/<你的GitHub用户名>/qx-splash-adblock/main/SplashAdBlock-Aggregator.list, tag=开屏广告拦截-聚合, force-policy=reject, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/StarHu66/qx-splash-adblock/main/SplashAdBlock-Aggregator.list, tag=开屏广告拦截-聚合, force-policy=reject, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
 ```
 
 ## 三个关键点

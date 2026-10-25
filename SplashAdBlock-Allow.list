@@ -1,0 +1,14 @@
+# NAME: SplashAdBlock-Allow
+# AUTHOR: starhu
+# DESC: 误杀放行白名单 —— 优先级必须高于 SplashAdBlock.list
+# UPDATED: 2026-10-25
+#
+# 用法：
+# 1、在 QX「网络活动」里找到打不开的站点，看它被 REJECT 的域名
+# 2、按下面格式加一行，推送到 GitHub，手机上更新订阅即可
+# 3、本文件在 [filter_remote] 里必须排在主规则【之前】，
+#    并且同样要加 inserted-resource=true
+#
+# force-policy 建议设为 direct（直连放行）
+
+;host-suffix, example.com, direct

@@ -1,0 +1,23 @@
+# NAME: SplashAdBlock-Aggregator
+# AUTHOR: starhu
+# DESC: 开屏广告 SDK 拦截（聚合平台扩展包，可选）
+# UPDATED: 2026-10-25
+#
+# 警告：
+# 聚合平台除广告外还承担 SDK 配置下发、埋点与归因上报，
+# 整域 reject 容易导致 App 启动卡住、页面转圈。
+# 默认全部注释，确认某个 App 确实走该平台再单独打开。
+# 引用时同样需要 inserted-resource=true。
+
+# --- 汇量 Mintegral ---
+;host-suffix, mintegral.com, reject
+
+# --- SigMob ---
+;host-suffix, sigmob.com, reject
+
+# --- TopOn（注意：官方域名是 toponad.com，不是 toponmob.com）---
+;host-suffix, toponad.com, reject
+
+# --- AdMob / Google ---
+;host-suffix, googleads.g.doubleclick.net, reject
+;host-suffix, pagead2.googlesyndication.com, reject

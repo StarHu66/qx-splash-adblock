@@ -1,0 +1,33 @@
+# NAME: SplashAdBlock
+# AUTHOR: starhu
+# DESC: 开屏广告 SDK 拦截（保守版）—— 掐掉广告素材，开屏无广告可展示即无跳转
+# UPDATED: 2026-10-25
+# COUNT: 13
+#
+# 用法说明（重要）：
+# 1、本文件给 Quantumult X 的 [filter_remote] 使用，opt-parser 设为 false
+# 2、必须加 inserted-resource=true，否则会被 filter_local 里的 geoip,cn,direct 抢先命中，
+#    而这些广告域名绝大多数解析到国内 IP，规则将完全失效
+# 3、QX 分流无法按 App 生效，以下规则对设备上全部 App 与 Safari 均生效
+# 4、误杀站点请加入 SplashAdBlock-Allow.list
+
+# --- 穿山甲 / 巨量引擎（字节）---
+host-suffix, pangolin.snssdk.com, reject
+host-suffix, pangolin-sdk-toutiao.com, reject
+host-suffix, pangolin-sdk-toutiao-b.com, reject
+host-suffix, isub.snssdk.com, reject
+host-suffix, ad.toutiao.com, reject
+
+# --- 广点通 / 优量汇（腾讯）---
+host-suffix, gdt.qq.com, reject
+host-suffix, mi.gdt.qq.com, reject
+host-suffix, pkgame.gdt.qq.com, reject
+host-suffix, sdk.e.qq.com, reject
+host-suffix, tracking.e.qq.com, reject
+
+# --- 快手联盟 ---
+host-suffix, e.kuaishou.com, reject
+
+# --- 百度联盟 ---
+host-suffix, mobads.baidu.com, reject
+host-suffix, mobads-logs.baidu.com, reject

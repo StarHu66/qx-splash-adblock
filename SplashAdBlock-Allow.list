@@ -11,4 +11,9 @@
 #
 # force-policy 建议设为 direct（直连放行）
 
+# 注意：本文件必须至少保留一条「生效」规则，否则 QX 会提示「内容无效」。
+# 下面这条指向 RFC 2606 保留域名 .invalid，永远不会被真实解析，仅作占位用，不影响任何流量。
+host-suffix, placeholder.splash-adblock.invalid, direct
+
+# --- 实际需要放行的域名加在下面（删掉行首的 ";" 再改成你的域名）---
 ;host-suffix, example.com, direct

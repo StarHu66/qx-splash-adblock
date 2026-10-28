@@ -47,6 +47,32 @@ host-suffix, mdt.qq.com, direct
 # --- 腾讯 Bugly 崩溃上报（远程广告终结者误伤，拦掉会丢失崩溃日志）---
 host-suffix, bugly.qq.com, direct
 
+# ===== 2026-10-28 第三轮：按「广告能显示就能拍照」的线索全面放行功能性 SDK =====
+# 原理：广告 SDK 只要收到「正常失败（无填充）」就继续业务流程；
+#       收到「连接被重置」则判定网络错误并中断流程。
+#       所以凡是承担 SDK 初始化 / 校验 / 上报 的域名一律放行，
+#       只保留「纯广告素材」域名被拦截。
+; --- 优量汇 / 广点通全系（含远程广告终结者拦的 v3./c3./sdkquic.）---
+host-suffix, gdt.qq.com, direct
+host-suffix, e.qq.com, direct
+
+; --- 火山引擎 SDK（字节系，mssdk.volces.com）---
+host-suffix, mssdk.volces.com, direct
+
+; --- 高德日志（logs.amap.com / dualstack-logs.amap.com）---
+host-suffix, amap.com, direct
+
+; --- 广告统计链接 / 个推 / 腾讯风控 ---
+host-suffix, statisticslinks.com, direct
+host-suffix, gepush.com, direct
+host-suffix, tuia.cn, direct
+
+; ===== 仍然拦截（纯广告素材，小蚕开屏广告的拦截主力）=====
+; 穿山甲：pangolin-sdk-toutiao.com / -b.com / -1.com、ctobsnssdk.com、pglstapt-toutiao.com
+; 快手：e.kuaishou.com、gifshow.com、adkwai.com
+; 百度联盟：mobads.baidu.com
+; Google：googleads.g.doubleclick.net、pagead2.googlesyndication.com
+
 # ===== 保留拦截（不放开）=====
 # 穿山甲 pangolin-*、快手 e.kuaishou.com、百度联盟 mobads.baidu.com
 #   —— 这几个是小蚕开屏广告的拦截主力，放开等于前功尽弃。

@@ -17,3 +17,15 @@ host-suffix, placeholder.splash-adblock.invalid, direct
 
 # --- 实际需要放行的域名加在下面（删掉行首的 ";" 再改成你的域名）---
 ;host-suffix, example.com, direct
+
+# --- 候选放行：今日水印相机（iOS）疑似误伤，待 QX「网络活动」确认后启用 ---
+# 依据：该 App 官方隐私政策列明使用「腾讯广点通优量汇」与「百度联盟广告SDK」，
+#       百度联盟用途里明确含「反作弊、保障服务稳定安全」，
+#       拍照前的设备环境校验被 RST 后 App 会提示「网络环境异常，拍照失败」。
+# 用法：先在 QX 网络活动里确认被 REJECT 的域名确实是下面这些，再删掉行首 ";" 启用。
+;host-suffix, gdt.qq.com, direct
+;host-suffix, mi.gdt.qq.com, direct
+;host-suffix, sdk.e.qq.com, direct
+;host-suffix, tracking.e.qq.com, direct
+;host-suffix, mobads.baidu.com, direct
+;host-suffix, mobads-logs.baidu.com, direct
